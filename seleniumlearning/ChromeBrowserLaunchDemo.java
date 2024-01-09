@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ChromeBrowserLaunchDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		// Creating a driver object referencing WebDriver interface
 		WebDriver driver;
@@ -14,10 +14,11 @@ public class ChromeBrowserLaunchDemo {
 
 		// Instantiating driver object
 		driver = new ChromeDriver();
-
+		Thread.sleep(12000);
 		// Using get() method to open a web page
 		driver.get("https://www.amazon.in/");
 
+		driver.manage().window().fullscreen();
 		// Closing the browser
 		driver.quit();
 
